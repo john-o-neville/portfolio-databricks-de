@@ -1,2 +1,4 @@
-# portfolio-databricks-de
-Showcase Databricks Data Engineering
+# Databricks Data Engineering
+Showcase for Databricks solution.  
+
+Simple pipeline example, based on a Metro Bank Account csv export.
