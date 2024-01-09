@@ -1,8 +1,4 @@
 -- Databricks notebook source
--- DLT to move data from bronze to silver.cleaned
--- TODO: only take the newest data (change data feed?)
--- https://learn.microsoft.com/en-gb/azure/databricks/delta/delta-change-data-feed
-
 CREATE OR REFRESH LIVE TABLE metro_cleaned (
     CONSTRAINT valid_date EXPECT (tran_date IS NOT NULL)
 ) 
@@ -34,6 +30,9 @@ FROM
   ) AS ms_uq
 WHERE
   ms_uq.row_num = 1;
+
+-- TODO: only take the newest data (change data feed?)
+-- https://learn.microsoft.com/en-gb/azure/databricks/delta/delta-change-data-feed
 
 -- COMMAND ----------
 
