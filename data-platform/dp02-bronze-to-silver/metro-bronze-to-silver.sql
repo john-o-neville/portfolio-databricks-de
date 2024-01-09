@@ -29,4 +29,7 @@ FROM
       bronze.raw.metro_statement AS MS
   ) AS ms_uq
 WHERE
-  ms_uq.row_num = 1
+  ms_uq.row_num = 1;
+
+-- TODO: only take the newest data (change data feed?)
+-- https://learn.microsoft.com/en-gb/azure/databricks/delta/delta-change-data-feed
