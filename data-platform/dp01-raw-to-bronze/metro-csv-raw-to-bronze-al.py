@@ -1,27 +1,14 @@
 # Databricks notebook source
+# Note: this is the same Notebook as "metro-csv-raw-to-bronze" but instead uses AutoLoader to watch the Azure Folder
+
+# COMMAND ----------
+
 from typing import NamedTuple
 from pyspark.sql.functions import col, input_file_name, current_timestamp
 
 # COMMAND ----------
 
 import_timestamp = current_timestamp()
-
-# COMMAND ----------
-
-# MAGIC %md ### Widgets
-# MAGIC filename: the file to be imported (name only - the path is fixed)
-
-# COMMAND ----------
-
-dbutils.widgets.text(
-    name='filename',
-    defaultValue='',
-    label='01 - Filename'
-)
-
-# COMMAND ----------
-
-filename = dbutils.widgets.get('filename')
 
 # COMMAND ----------
 
@@ -61,16 +48,8 @@ renamed_cols = [
 
 # COMMAND ----------
 
-folder_root = 'abfss://raw@portfoliolake01.dfs.core.windows.net'
+# TODO: write the cloudFiles query here
 
-# COMMAND ----------
-
-raw_df = (
-    spark.read
-    .format('csv')
-    .option('header', 'true')
-    .load(f'{folder_root}/{filename}')
-)
 
 # COMMAND ----------
 
