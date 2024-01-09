@@ -1,8 +1,4 @@
 -- Databricks notebook source
-SET minus_1 = CAST(-1 AS DECIMAL(12,4));
-
--- COMMAND ----------
-
 CREATE OR REFRESH LIVE TABLE metro_enriched
 (
   tran_date DATE,
@@ -19,7 +15,7 @@ SELECT
   MC.tran_type,
   CASE
     WHEN MC.amount_in IS NOT NULL THEN MC.amount_in
-    ELSE MC.amount_out * ${minus_1}
+    ELSE CAST(MC.amount_out * -1 AS DECIMAL(12,4))
   END AS tran_amount,
   MC.balance
 FROM
