@@ -30,20 +30,3 @@ FROM
   ) AS ms_uq
 WHERE
   ms_uq.row_num = 1
-
--- COMMAND ----------
-
-    SELECT
-      TO_DATE(MS.tran_date, 'dd/mm/yyyy') AS tran_date,
-      MS.tran_details,
-      MS.tran_type,
-      CAST(MS.amount_in AS DECIMAL(12,4)) AS amount_in,
-      CAST(MS.amount_out AS DECIMAL(12,4)) AS amount_out,
-      CAST(MS.balance AS DECIMAL(12,4)) AS balance,
-      -- de-dup the rows
-      ROW_NUMBER() OVER(
-        PARTITION BY MS.tran_date, MS.balance
-        ORDER BY MS.meta_sourcefilename
-      ) AS row_num
-    FROM
-      bronze.raw.metro_statement AS MS
