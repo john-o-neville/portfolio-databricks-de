@@ -1,7 +1,7 @@
 -- Databricks notebook source
 CREATE OR REFRESH LIVE TABLE metro_cleaned (
     CONSTRAINT valid_date EXPECT (tran_date IS NOT NULL)
-) 
+)
 COMMENT 'Cleaned Metro account data'
 AS
 SELECT
@@ -29,10 +29,7 @@ FROM
       bronze.raw.metro_statement AS MS
   ) AS ms_uq
 WHERE
-  ms_uq.row_num = 1;
-
--- TODO: only take the newest data (change data feed?)
--- https://learn.microsoft.com/en-gb/azure/databricks/delta/delta-change-data-feed
+  ms_uq.row_num = 1
 
 -- COMMAND ----------
 
