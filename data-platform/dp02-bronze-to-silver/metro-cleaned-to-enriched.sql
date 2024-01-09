@@ -19,7 +19,7 @@ SELECT
   MC.tran_type,
   CASE
     WHEN MC.amount_in IS NOT NULL THEN MC.amount_in
-    ELSE MC.amount_out * -1
+    ELSE MC.amount_out * ${minus_1}
   END AS tran_amount,
   MC.balance
 FROM
