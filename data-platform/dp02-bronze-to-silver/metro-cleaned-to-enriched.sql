@@ -1,4 +1,8 @@
 -- Databricks notebook source
+SET minus_1 = CAST(-1 AS DECIMAL(12,4));
+
+-- COMMAND ----------
+
 CREATE OR REFRESH LIVE TABLE metro_enriched
 (
   tran_date DATE,
