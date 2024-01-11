@@ -16,4 +16,4 @@ SELECT
   ME.tran_amount,
   ME.balance
 FROM
-  live.metro_enriched AS ME;
+  silver.enriched.metro_enriched AS ME;
