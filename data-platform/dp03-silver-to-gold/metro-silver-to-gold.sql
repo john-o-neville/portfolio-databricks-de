@@ -10,7 +10,7 @@ CREATE OR REFRESH LIVE TABLE metro_statement
 COMMENT 'The Fact table for metro_statements'
 AS
 SELECT
-  ME.tran_date,
+  ME.tran_date AS date_key,
   ME.tran_details,
   ME.tran_type,
   ME.tran_amount,
