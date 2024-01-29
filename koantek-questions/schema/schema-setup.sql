@@ -14,15 +14,19 @@
 -- MAGIC - Status
 -- MAGIC
 -- MAGIC #### ER diagram
--- MAGIC ![ER diagram](files/coding_exercise_drawio.png)
+-- MAGIC ![ER diagram](/Workspace/Shared/koantek/coding_exercise.drawio.png)
 
 -- COMMAND ----------
 
-CREATE DATABASE IF NOT EXISTS ordertracker;
+CREATE CATALOG IF NOT EXISTS koantek;
 
 -- COMMAND ----------
 
-CREATE TABLE IF NOT EXISTS ordertracker.customers (
+CREATE DATABASE IF NOT EXISTS koantek.ordertracker;
+
+-- COMMAND ----------
+
+CREATE TABLE IF NOT EXISTS koantek.ordertracker.customers (
   customer_id bigint,
   customer_name string,
   postal_address string,
@@ -40,7 +44,7 @@ CLUSTER BY (customer_name);
 
 -- COMMAND ----------
 
-CREATE TABLE IF NOT EXISTS ordertracker.products (
+CREATE TABLE IF NOT EXISTS koantek.ordertracker.products (
   product_id bigint,
   product_name string,
   product_cost decimal(12,4)
@@ -53,7 +57,7 @@ CLUSTER BY (product_name);
 
 -- COMMAND ----------
 
-CREATE TABLE IF NOT EXISTS ordertracker.status (
+CREATE TABLE IF NOT EXISTS koantek.ordertracker.status (
   status_id int,
   status_code string
 )
@@ -61,7 +65,7 @@ COMMENT 'Holds a list of status codes, used as lookup data by multiple tables';
 
 -- COMMAND ----------
 
-CREATE TABLE IF NOT EXISTS ordertracker.orders (
+CREATE TABLE IF NOT EXISTS koantek.ordertracker.orders (
   order_id bigint,
   customer_id bigint,
   order_date date,
@@ -76,7 +80,7 @@ CLUSTER BY (customer_id);
 
 -- COMMAND ----------
 
-CREATE TABLE IF NOT EXISTS ordertracker.line_items (
+CREATE TABLE IF NOT EXISTS koantek.ordertracker.line_items (
   line_item_id bigint,
   order_id bigint,
   product_id bigint,

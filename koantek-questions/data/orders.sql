@@ -1,5 +1,12 @@
 -- Databricks notebook source
-insert into ordertracker.orders (order_id, customer_id, order_date, invoice_number, order_status) 
+insert into koantek.ordertracker.orders 
+  (
+    order_id, 
+    customer_id, 
+    order_date, 
+    invoice_number, 
+    order_status
+  ) 
 values (624, 24, '2020-01-04T02:21:12Z', 'QL7326-290C', 2),
  (516, 100, '2021-06-19T09:49:45Z', 'FF8551-90LL', 1),
  (657, 36, '2023-08-27T22:20:49Z', 'QE1379-96ES', 99),

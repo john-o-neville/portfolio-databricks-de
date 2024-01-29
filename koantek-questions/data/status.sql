@@ -1,5 +1,5 @@
 -- Databricks notebook source
-INSERT INTO ordertracker.status
+INSERT INTO koantek.ordertracker.status
 (
   status_id,
   status_code

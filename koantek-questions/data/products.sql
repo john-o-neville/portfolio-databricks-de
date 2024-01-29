@@ -1,5 +1,10 @@
 -- Databricks notebook source
-insert into ordertracker.products (product_id, product_name, product_cost) 
+insert into koantek.ordertracker.products 
+  (
+    product_id, 
+    product_name, 
+    product_cost
+  ) 
 values (468, 'Tart Shells - Sweet, 3', 188.89),
  (443, 'Container - Clear 32 Oz', 550.74),
  (198, 'Couscous', 99.94),

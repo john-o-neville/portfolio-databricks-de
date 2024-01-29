@@ -1,5 +1,16 @@
 -- Databricks notebook source
-insert into ordertracker.line_items (line_item_id, order_id, product_id, cost_per_item, discount, quantity, currency, line_total, line_status) 
+insert into koantek.ordertracker.line_items 
+  (
+    line_item_id, 
+    order_id, 
+    product_id, 
+    cost_per_item, 
+    discount, 
+    quantity, 
+    currency, 
+    line_total, 
+    line_status
+  ) 
 values (32, 880, 247, 70.12, 7.07, 1, 'EUR', 70.12, 1),
 (42, 940, 423, 82.76, 0.96, 15, 'USD', 1241.4, 2),
 (88, 596, 328, 24.65, 1.25, 18, 'USD', 443.7, 3),

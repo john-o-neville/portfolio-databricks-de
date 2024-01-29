@@ -1,5 +1,15 @@
 -- Databricks notebook source
-insert into ordertracker.customers (customer_id, customer_name, postal_address, postcode, country, email_address, mobile_number, date_of_signup) 
+insert into koantek.ordertracker.customers 
+  (
+    customer_id, 
+    customer_name, 
+    postal_address, 
+    postcode, 
+    country, 
+    email_address, 
+    mobile_number, 
+    date_of_signup
+  ) 
 values 
 (10, 'Meejo', '03228 Kedzie Plaza', 'B12', 'United Kingdom', 'llefort0@4shared.com', '556-976-5699', '2023-03-10T04:49:40Z'),
  (28, 'Thoughtbeat', '938 Northview Point', 'AB39', 'United Kingdom', 'mswash1@hhs.gov', '397-730-6320', '2020-02-22T05:03:15Z'),
